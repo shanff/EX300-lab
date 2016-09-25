@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # centos7 - nfs server - export nfs with SELinux labels
-# set it up on tom
+# set it up on svr1
 # TBD to make it more fun: add krb5p authentication
 # author: kamilsmuga
 
@@ -12,7 +12,7 @@ systemctl enable nfs-server
 
 mkdir -p /nfsshare
 cal > /nfsshare/calendar.out
-echo "/nfsshare 10.0.0.6(rw)" >> /etc/exports
+echo "/nfsshare 10.200.0.11(rw)" >> /etc/exports
 
 # export selinux labels
 sed -i 's|RPCNFSDARGS=""|RPCNFSDARGS="-V 4.2"|' /etc/sysconfig/nfs

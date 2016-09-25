@@ -21,12 +21,12 @@ firewall-cmd --reload
 # create block backstore from mylvm partition
 targetcli backstores/block create disk1 /dev/centos/mylvm
 # create icssi target
-targetcli iscsi/ create wwn=iqn.2014-10.example.com:jerry
+targetcli iscsi/ create wwn=iqn.2014-10.example.com:svr2
 # create lun from backstore
-targetcli /iscsi/iqn.2014-10.example.com:jerry/tpg1/luns create /backstores/block/disk1
-# add tom to ACLS
-targetcli iscsi/iqn.2014-10.example.com:jerry/tpg1/acls create iqn.2014-10.example.com:tom
+targetcli /iscsi/iqn.2014-10.example.com:svr2/tpg1/luns create /backstores/block/disk1
+# add svr1 to ACLS
+targetcli iscsi/iqn.2014-10.example.com:svr2/tpg1/acls create iqn.2014-10.example.com:svr1
 # create portal na 3260
-targetcli iscsi/iqn.2014-10.example.com:jerry/tpg1/portals create 0.0.0.0
+targetcli iscsi/iqn.2014-10.example.com:svr2/tpg1/portals create 0.0.0.0
 # save config
 targetcli saveconfig

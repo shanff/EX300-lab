@@ -22,7 +22,7 @@ sed -i 's|# access-control: 0.0.0.0/0 refuse|access-control: 10.200.0.0/24 allow
 # set forward zone to google
 echo -e "forward-zone: \n \tname: . \n \tforward-addr: 8.8.8.8" >> /etc/unbound/unbound.conf
 
-# add A records for tom, jerry and mail in example.com domain
+# add A records for svr1, svr2 and mail in example.com domain
 DNS_CONF=/etc/unbound/local.d/example.conf
 echo local-data: \"svr1.example.com A 10.200.0.10\" > $DNS_CONF
 echo local-data: \"svr2.example.com A 10.200.0.11\" >> $DNS_CONF

@@ -12,8 +12,8 @@ firewall-cmd --reload
 
 mkdir -p /smbshare
 groupadd cartoon
-# tom will be able to read and write
-useradd -G cartoon tom -s /sbin/nologin -p tom
+# svr1 will be able to read and write
+useradd -G cartoon svr1 -s /sbin/nologin -p svr1
 # zorro no - he is not a cartoon. obviously
 useradd zorro -s /sbin/nologin -p zorro
 chown :cartoon /smbshare
@@ -33,6 +33,6 @@ restorecon -vvFR /smbshare/
 
 # add users to smb db
 echo "zorro" > smbpasswd zorro -s
-echo "tom" > smbpasswd tom -s
+echo "svr1" > smbpasswd svr1 -s
 
 systemctl restart smb

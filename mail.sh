@@ -13,11 +13,11 @@ systemctl start postfix
 # postfix configuration
 POST_CFG=/etc/postfix/main.cf
 
-echo myhostname = jerry.example.com >> $POST_CFG
+echo myhostname = svr2.example.com >> $POST_CFG
 # route to mail.example.com - configurable in dns
 echo relayhost = mail.example.com >> $POST_CFG
 echo mydomain = example.com >> $POST_CFG
-echo myorigin = jerry.example.com >> $POST_CFG
+echo myorigin = svr2.example.com >> $POST_CFG
 echo local_transport = error: local delivery disabled >>  $POST_CFG
 # listen for all mails sent on looback
 sed -i 's/inet_interfaces = localhost/inet_interfaces = loopback-only/' $POST_CFG
