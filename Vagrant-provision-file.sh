@@ -1,1 +1,1 @@
-yum -y install setroubleshoot-server setools-console kernel-devel
+yum -y install setroubleshoot-server setools-console kernel-devel kernel-headers
