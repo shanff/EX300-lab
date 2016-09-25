@@ -25,8 +25,8 @@ echo -e "forward-zone: \n \tname: . \n \tforward-addr: 8.8.8.8" >> /etc/unbound/
 # add A records for tom, jerry and mail in example.com domain
 DNS_CONF=/etc/unbound/local.d/example.conf
 echo local-data: \"svr1.example.com A 10.200.0.10\" > $DNS_CONF
-echo local-data: \"svr2.example.com A 10.0.0.11\" >> $DNS_CONF
-echo local-data: \"mail.example.com A 10.0.0.11\" >> $DNS_CONF
+echo local-data: \"svr2.example.com A 10.200.0.11\" >> $DNS_CONF
+echo local-data: \"mail.example.com A 10.200.0.11\" >> $DNS_CONF
 # add PTR records for 10.0.0.6 and 10.0.0.5
 echo local-data-ptr: \"10.200.0.10 svr1.example.com\" >> $DNS_CONF
 echo local-data-ptr: \"10.200.0.11 svr2.example.com\" >> $DNS_CONF
